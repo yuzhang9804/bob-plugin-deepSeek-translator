@@ -149,7 +149,7 @@ export function translate(query: Bob.TranslateQuery, completion: Bob.Completion)
     })
   }
 
-  const { model, apiKeys } = $option
+  const { model, apiKeys, proxy_url } = $option
 
   if (!apiKeys) {
     completion({
@@ -164,7 +164,7 @@ export function translate(query: Bob.TranslateQuery, completion: Bob.Completion)
   const apiKeySelection = trimmedApiKeys.split(',').map((key) => key.trim())
   const apiKey = apiKeySelection[Math.floor(Math.random() * apiKeySelection.length)]
 
-  const baseUrl = ensureHttpsAndNoTrailingSlash('https://api.deepseek.com')
+  const baseUrl = ensureHttpsAndNoTrailingSlash(proxy_url)
   const apiUrlPath = '/chat/completions'
 
   const header = buildHeader(apiKey)

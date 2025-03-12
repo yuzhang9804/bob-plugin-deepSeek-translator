@@ -11,22 +11,24 @@
   "minBobVersion": "0.5.0",
   "options": [
     {
+      "identifier": "proxy_url",
+      "type": "text",
+      "title": "代理 URL",
+      "defaultValue": "https://api.deepseek.com",
+      "desc": "如果需要使用代理，请输入代理 URL"
+    },
+    {
+      "identifier": "model",
+      "type": "text",
+      "title": "模型",
+      "defaultValue": "deepseek-chat",
+      "desc": "模型Key"
+    },
+    {
       "identifier": "apiKeys",
       "type": "text",
       "title": "API KEY",
       "desc": "必填项。可以用英文逗号分割多个 API KEY 以实现额度加倍及负载均衡"
-    },
-    {
-      "identifier": "model",
-      "type": "menu",
-      "title": "模型",
-      "defaultValue": "deepseek-chat",
-      "menuValues": [
-        {
-          "title": "deepseek-chat",
-          "value": "deepseek-chat"
-        }
-      ]
     }
   ]
 }
